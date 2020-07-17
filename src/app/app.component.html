@@ -4,18 +4,22 @@
   </div>
 
   <nav class=" text-2xl font-light">
-    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="home" routerLinkActive="active">Home</a>
-    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="user-profile" routerLinkActive="active">User Profile</a>
-    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="missions-profile" routerLinkActive="active">Missions Profile</a>
+    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="home"
+      routerLinkActive="active">Home</a>
+    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="user-profile"
+      routerLinkActive="active">User Profile</a>
+    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="missions-profile"
+      routerLinkActive="active">Missions Profile</a>
   </nav>
 
   <div class="flex items-center ml-auto">
     <a href="#" class=" text-2xl font-light m-2 p-2 rounded-b-md hover:font-normal hover:shadow-md">Login</a>
     <a href="#"
-      class=" bg-gray-100 border border-logo-700 rounded-full text-xl font-normal m-4 pl-3 pr-3 p-1 hover:shadow-lg ">Sign Up</a>
+      class=" bg-gray-100 border border-logo-700 rounded-full text-xl font-normal m-4 pl-3 pr-3 p-1 hover:shadow-lg ">Sign
+      Up</a>
   </div>
 </header>
-<div style="text-align: center;">
-  <div>google map here</div>
+<div class="shadow-md">
+  <div #mapContainer id="map"></div>
 </div>
 <router-outlet></router-outlet>

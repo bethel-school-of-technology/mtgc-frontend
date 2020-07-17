@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import {} from 'googlemaps';
-import {  AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,9 @@ import {  AfterViewInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.scss'],
  
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit  {
   title = 'globalMissions';
- /*  @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
+  @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
   map: google.maps.Map;
   lat = 40.73061;
   lng = -73.935242;
@@ -35,6 +34,5 @@ export class AppComponent {
     this.map = new google.maps.Map(this.gmap.nativeElement, 
     this.mapOptions);
     this.marker.setMap(this.map);
-  } */
+  }
  }
-
