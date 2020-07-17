@@ -1,1 +1,15 @@
-<p>sign-up works!</p>
+<div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+  </div>
+  <hr/>
+  <div style="text-align:center">
+    <div>
+        <h2>Registration Page</h2>
+        <h3>{{signupPath}}</h3>
+        <app-signup
+          [dataPath]="signupPath">
+        </app-signup>
+    </div>
+  </div>
