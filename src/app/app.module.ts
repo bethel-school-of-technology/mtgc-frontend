@@ -7,7 +7,7 @@ import { UserProfileComponent } from './componets/user-profile/user-profile.comp
 import { HomeComponent } from './componets/home/home.component';
 import { MissionsProfileComponent } from './componets/missions-profile/missions-profile.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component';
-
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { SignUpComponent } from './componets/sign-up/sign-up.component';
     UserProfileComponent,
     HomeComponent,
     MissionsProfileComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
