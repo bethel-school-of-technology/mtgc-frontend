@@ -11,8 +11,8 @@ export class AppComponent implements AfterViewInit  {
   title = 'globalMissions';
   @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
   map: google.maps.Map;
-  lat = 40.73061;
-  lng = -73.935242;
+  lat = -1.415150;
+  lng = 37.624397;
 
   coordinates = new google.maps.LatLng(this.lat, this.lng);
 
