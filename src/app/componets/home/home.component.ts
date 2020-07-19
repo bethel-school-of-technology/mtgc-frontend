@@ -10,8 +10,8 @@ export class HomeComponent
   title = 'globalMissions';
   @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
   map: google.maps.Map;
-  lat = -1.415150;
-  lng = 37.624397;
+  lat = -1.3667180;
+  lng = 37.6021070;
 
   coordinates = new google.maps.LatLng(this.lat, this.lng);
 
