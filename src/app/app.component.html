@@ -1,25 +1,51 @@
-<header class="flex sticky top-0 flex-row p-3 items-center justify-start bg-gray-100 shadow-md">
-  <div>
-    <img alt="logo" class="w-56 mr-2" src="../assets/images/Logo.png" />
-  </div>
 
-  <nav class=" text-2xl font-light">
-    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="home"
-      routerLinkActive="active">Home</a>
-    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="user-profile"
-      routerLinkActive="active">User Profile</a>
-    <a class="m-2 pr-3 pl-2 rounded-b-md hover:font-normal hover:shadow-md" routerLink="missions-profile"
-      routerLinkActive="active">Missions Profile</a>
-  </nav>
+	<nav class="flex items-center justify-between flex-wrap shadow-md bg-gray-100 p-2 fixed w-full z-10 top-0">
+		<div class="flex items-center flex-shrink-0 mr-6">
+      <a routerLink="home" routerLinkActive="active">
+        <img alt="logo" class="w-48 mr-2 shadow-lg" src="../assets/images/Logo.png">
+			</a>
+		</div>
 
-  <div class="flex items-center ml-auto">
-    <a href="#" class=" text-2xl font-light m-2 p-2 rounded-b-md hover:font-normal hover:shadow-md">Login</a>
-    <a href="#"
-      class=" bg-gray-100 border border-logo-700 rounded-full text-xl font-normal m-4 pl-3 pr-3 p-1 hover:shadow-lg ">Sign
-      Up</a>
-  </div>
-</header>
-<!-- <div class="shadow-md">
-  <div #mapContainer id="map"></div>
-</div> -->
+		<div class="block lg:hidden">
+			<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
+				<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+			</button>
+		</div>
+
+		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
+			<ul class=" list-reset lg:flex justify-end flex-1 items-center text-xl">
+				<li class="mr-3">
+					<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" routerLink="home" routerLinkActive="active">Map</a>
+				</li>
+				<li class="mr-3">
+					<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" routerLink="user-profile"
+          routerLinkActive="active">User Profile</a>
+				</li>
+				<li class="mr-3">
+					<a class="inline-block text-gray-500 no-underline hover:text-gray-900 py-2 px-4" routerLink="missions-profile"
+          routerLinkActive="active">Missions Profile</a>
+				</li>
+				<li class="mr-3">
+					<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:font-normal py-2 px-4" routerLink="login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="mr-3">
+          <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4" href="#">Signup</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!--Container-->
+	<div class="container shadow-lg mx-auto bg-white mt-24 md:mt-18">
+
+	</div>
+
+	<script>
+		//Javascript to toggle the menu
+		document.getElementById('nav-toggle').onclick = function(){
+			document.getElementById("nav-content").classList.toggle("hidden");
+		}
+	</script>
+
+
 <router-outlet></router-outlet>
