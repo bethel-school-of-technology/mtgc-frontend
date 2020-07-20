@@ -8,7 +8,7 @@ import { HomeComponent } from './componets/home/home.component';
 import { MissionsProfileComponent } from './componets/missions-profile/missions-profile.component';
 import { LoginComponent } from './componets/login/login.component';
 /* import { SignUpComponent } from './componets/sign-up/sign-up.component'; */
-/* import { LoginComponent } from './login/login.component'; */
+
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { LoginComponent } from './componets/login/login.component';
     MissionsProfileComponent,
     LoginComponent,
    /*  SignUpComponent, */
-   /*  LoginComponent */
+  
   ],
   imports: [
     BrowserModule,
