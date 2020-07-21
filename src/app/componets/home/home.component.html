@@ -1,6 +1,8 @@
 <div class="flex flex-wrap ">
 
-  <div class="fixed shadow-md" #mapContainer id="map"></div> <!-- DIV FOR MAP -->
+  <agm-map class="fixed shadow-md" [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map> <!-- DIV FOR MAP -->
   
   <!-- This will have to end up being a loop to accomedate for the search/map results -->
   <div class="absolute bg-white shadow-lg w-1/5 m-6 rounded-lg overflow-hidden"> <!-- ORG CARD -->
