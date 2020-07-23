@@ -4,7 +4,20 @@
       <a routerLink="home" routerLinkActive="active">
         <img alt="logo" class="w-48 mr-2 shadow-lg" src="../assets/images/Logo.png">
 			</a>
-		</div>
+    </div>
+  <!-- search field --> 
+    <div class="w-full flex-grow lg:flex  lg:content-center lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+      <div class="flex-1 w-full mx-auto max-w-sm content-center py-4 lg:py-0">
+         <div class="relative pull-right pl-4 pr-4 md:pr-0">
+            <input type="search" placeholder="Search" class="w-full bg-white text-sm text-gray-800 transition border focus:outline-none focus:border-logo-900 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+            <div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
+               <svg class="fill-current pointer-events-none text-gray-800 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+               </svg>
+            </div>
+         </div>
+      </div>
+    </div>
 
 		<div class="block lg:hidden">
 			<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
@@ -26,14 +39,20 @@
           routerLinkActive="active">Missions Profile</a>
 				</li>
 				<li class="mr-3">
+					<a class="inline-block text-gray-500 no-underline hover:text-gray-900 py-2 px-4" routerLink="about"
+          routerLinkActive="active">About</a>
+				</li>
+				<li class="mr-3">
 					<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:font-normal py-2 px-4" routerLink="login" routerLinkActive="active">Login</a>
         </li>
         <li class="mr-3">
-          <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4" href="#">Signup</a>
+          <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4" routerLink="signup" routerLinkActive="active">Signup</a>
 				</li>
-			</ul>
+      </ul>
+      
 		</div>
-	</nav>
+  </nav>
+  
 
 	<!--Container-->
 	<div class="container shadow-lg mx-auto bg-white mt-24 md:mt-18">
