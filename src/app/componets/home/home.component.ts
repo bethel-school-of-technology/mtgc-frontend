@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { MapsService } from 'src/app/maps.service';
+import { Component, OnInit } from '@angular/core';
+import { MapsService } from '../../maps.service'
 
 @Component({
   selector: 'app-home',
