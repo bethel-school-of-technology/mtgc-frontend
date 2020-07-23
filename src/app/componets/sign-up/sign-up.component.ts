@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 title = 'Registration Page';
-  loginPath: string = 'http://localhost:3000/users/signup';
+  signupPath: string = 'http://localhost:3000/users/signup';
   constructor() { }
 
   ngOnInit(): void {
