@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MapsService } from '../../maps.service'
+import { MapCardComponent } from '../map-card/map-card.component';
 
 @Component({
   selector: 'app-home',
