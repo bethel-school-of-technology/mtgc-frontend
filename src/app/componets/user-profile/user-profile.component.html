@@ -97,7 +97,12 @@
             <img src="https://source.unsplash.com/MP0IUfwrn0A"
                 class="rounded-none flex items-left lg:rounded-lg shadow-2xl hidden lg:block">
             <!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
-    
+            <h3> Users </h3>
+            <ul>
+                <li *ngFor="let user of users">
+                  <p>{{user.id + 1}}. {{user.FirstName}}</p>
+                </li>
+              </ul>
         </div>
 
         <!-- <div class="p-5 w-2/3 flex flex-col justify-center items-center "> --> <!-- LEFT SIDE OF FORM: profile picture & BIO -->
