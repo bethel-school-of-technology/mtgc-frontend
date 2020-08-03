@@ -11,6 +11,7 @@ import { HomeComponent } from './componets/home/home.component';
 import { MissionsProfileComponent } from './componets/missions-profile/missions-profile.component';
 import { LoginComponent } from './componets/login/login.component';
 import { MapCardComponent } from './componets/map-card/map-card.component';
+import { AdminComponent } from './componets/admin/admin.component';
 /* import { SignUpComponent } from './componets/sign-up/sign-up.component'; */
 
 
@@ -22,6 +23,7 @@ import { MapCardComponent } from './componets/map-card/map-card.component';
     MissionsProfileComponent,
     LoginComponent,
     MapCardComponent,
+    AdminComponent,
    /*  SignUpComponent, */
   
   ],
