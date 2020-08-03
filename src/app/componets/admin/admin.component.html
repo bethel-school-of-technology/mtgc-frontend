@@ -1,1 +1,8 @@
-<p>admin works!</p>
+
+<div class="bg-gray-200 h-screen my-32">
+    <ul>
+        <li *ngFor="let user of users">
+            <p>{{user.UserId}}. {{user.FirstName}} {{user.LastName}}</p>
+        </li>
+    </ul>
+</div>
