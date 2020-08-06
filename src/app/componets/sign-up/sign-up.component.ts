@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Users } from '../../models/users';
 
 @Component({
-  selector: 'app-sign-up',
+  selector: 'app-signup',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })

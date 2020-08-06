@@ -6,6 +6,7 @@ import { MissionsProfileComponent } from './componets/missions-profile/missions-
 import { LoginComponent } from './componets/login/login.component';
 import { AboutComponent } from './componets/about/about.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
+import { AdminComponent } from './componets/admin/admin.component';
 
 const routes: Routes = [
 
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignUpComponent
+  },
+  {
+    path: 'admin', 
+    component: AdminComponent
   }
 ];
 

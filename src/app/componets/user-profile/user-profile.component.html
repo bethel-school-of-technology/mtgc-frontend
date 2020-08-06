@@ -1,11 +1,11 @@
 <div class="bg-gray-200"> 
 
-    <div class="max-w-2xl flex items-center h-auto lg:h-screen flex-wrap ml-4 mr-20 mt-7 lg:my-0">
+    <div class="max-w-2xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
     
     
         <!--Main Col-->
         <div id="profile"
-            class="flex items-startw-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+            class="flex items-start w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
     
     
             <div class="p-4 md:p-12 text-center lg:text-left">
@@ -95,12 +95,12 @@
         <div class="w-full lg:w-2/5">
             <!-- Big profile image for side bar (desktop) -->
             <img src="https://source.unsplash.com/MP0IUfwrn0A"
-                class="rounded-none flex items-left lg:rounded-lg shadow-2xl hidden lg:block">
+                class="rounded-none flex items-left lg:rounded-lg shadow-2xl lg:block">
             <!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
             <h3> Users </h3>
             <ul>
                 <li *ngFor="let user of users">
-                  <p>{{user.id + 1}}. {{user.FirstName}}</p>
+                  <p>{{user.userId + 1}}. {{user.FirstName}}</p>
                 </li>
               </ul>
         </div>
@@ -123,13 +123,3 @@
     
     </div>
 </div>
-<footer class='w-full text-center border-t border-grey p-4 pin-b  bg-gray-100'>
-    <div>
-        Contact Us: <a href="#"
-            class="  bg-gray-100 border border-logo-700 rounded-full text-l font-normal m-4 pl-3 pr-3 p-1 hover:shadow-lg ">
-            Email</a><br>
-        <p>Phone: (800)123-4567</p>
-        <p>fax: (800)123-4567</p>
-    </div>
-
-</footer>
