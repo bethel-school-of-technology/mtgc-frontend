@@ -1,24 +1,24 @@
 <div class="bg-white rounded shadow-lg flex flex-row w-full" style="height:500px">
-    <div class="hidden md:block w-1/2 bg-cover bg-center h-full block flex-shrink-0 shadow-2xl"
+    <div class="hidden md:block w-1/2 bg-cover bg-center h-full flex-shrink-0 shadow-2xl"
         style="background-image:url(https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1534&amp;q=80)">
     </div>
-    <div class="p-5 w-full flex flex-col justify-center items-center shadow-2xl">
-        <div class="flex flex-col mb-10 w-full"> <label class="block text-gray-700 text-sm font-medium pb-1"
-                for="email"> Email </label> <input
-                class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-                id="email" type="text" placeholder="cap@avengers.com"> </div>
-        <div class="flex flex-col w-full"> <label class="block text-gray-700 text-sm font-medium pb-1" for="email">
-                Password </label> <input
-                class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-                id="password" type="text" placeholder="******"> </div> <button
-            class="bg-gray-700 text-white rounded py-2 px-5 w-64 mt-10">Sign In</button>
-    </div>
+    <!-- Form still needs an onSubmit() -->
+    <form class="p-5 w-full flex flex-col justify-center items-center shadow-2xl"> 
+        <div>
+            <div class="flex flex-col mb-10 w-full">
+                <label class="block text-gray-700 text-sm font-medium pb-1" for="email">
+                    Username </label>
+                <input
+                    class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+                    id="email" type="text" placeholder="username" [(ngModel)]="user.Username">
+            </div>
+            <div class="flex flex-col w-full"> <label class="block text-gray-700 text-sm font-medium pb-1" for="email">
+                    Password </label>
+                <input
+                    class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+                    id="password" type="text" placeholder="******" [(ngModel)]="user.Password">
+            </div>
+            <button class="bg-gray-700 text-white rounded py-2 px-5 w-64 mt-10">Sign In</button>
+        </div>
+    </form>
 </div>
-<footer class='w-full text-center border-t border-grey p-4 pin-b bg-gray-100'>
-    <div>
-        Contact Us: <a href="#"
-            class="  bg-gray-100 border border-logo-700 rounded-full text-l font-normal m-4 pl-3 pr-3 p-1 hover:shadow-lg ">
-            Email</a><br>
-        <p>Phone: (800)123-4567</p>
-        <p>fax: (800)123-4567</p>
-    </div>
