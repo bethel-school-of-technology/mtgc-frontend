@@ -1,7 +1,8 @@
 <div class="flex flex-wrap ">
 
   <agm-map class="fixed shadow-md" [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-marker [latitude]="lat" [longitude]="lng" ></agm-marker>
+    <div *ngFor="let marker of markerLocation"><agm-marker [latitude]="marker.geometry.location.lat" [longitude]="marker.geometry.location.lng"></agm-marker></div>
   </agm-map> <!-- DIV FOR MAP -->
   
 <map-card></map-card>
