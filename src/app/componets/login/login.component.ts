@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../../models/users'; 
+import { users } from '../../models/users'; 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  user: Users = new Users();
+  user: users = new users();
   constructor() { }
 
   ngOnInit(): void {

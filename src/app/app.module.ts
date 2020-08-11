@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
-
+import { PostdataService } from './postdata.service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './componets/user-profile/user-profile.component';
@@ -36,7 +36,7 @@ import { AdminComponent } from './componets/admin/admin.component';
       apiKey:'AIzaSyCWafOd1xDijhEnzrK836Bk3yaLgJbx9tk'
     })
   ],
-  providers: [],
+  providers: [PostdataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

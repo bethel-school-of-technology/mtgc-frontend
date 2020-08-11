@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {Users } from '../../models/users';
+import { PostdataService } from '../../postdata.service';
+
 
 @Component({
   selector: 'app-admin',
@@ -8,18 +8,32 @@ import {Users } from '../../models/users';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-private adminRoute = 'http://localhost:3000/users/admin';
-public users: Users[];
+  Userlist: any = [];
 
-  constructor(private http:HttpClient) { }
 
-  getUsers(){
-    this.http.get<Users[]>(this.adminRoute).subscribe(users => {
-      this.users = users;
-    });
+  ngOnInit() {
+    this.loadUser();
   }
-  ngOnInit(): void {
-    this.getUsers();
+
+  constructor(
+    public postdataService: PostdataService
+  ){ }
+
+   // Users list
+   loadUser() {
+    return this.postdataService.GetAdmin().subscribe((data: {}) => {
+      this.Userlist = data;
+    
+    })
   }
+  // Delete issue
+  deleteIusse(data){
+    var index = index = this.Userlist.map(x => {return x.issue_name}).indexOf(data.issue_name);
+     return this.postdataService.DeleteUsers(data.id).subscribe(res => {
+      this.Userlist.splice(index, 1)
+       console.log('Issue deleted!')
+     })
+  }
+
 
 }

@@ -3,7 +3,7 @@
         <h4>Users</h4>
     </div>
  -->
-    <li *ngFor="let user of users" class="list-none">
+    <li *ngFor="let users of Userlist">
 
         <div class="bg-gray-200">
 
@@ -20,15 +20,15 @@
                         <div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
                             style="background-image: url('https://source.unsplash.com/MP0IUfwrn0A')"></div>
 
-                        <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{user.UserId}}. {{user.FirstName}}
-                            {{user.LastName}}</h1>
+                        <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{users.UserId}}. {{users.FirstName}}
+                            {{users.LastName}}</h1>
                         <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-logo-900 opacity-25"></div>
                         <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
                             <svg class="h-4 fill-current text-logo-700 pr-4" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20">
                                 <path
                                     d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
-                            </svg>{{user.Bio}}</p>
+                            </svg>{{users.Bio}}</p>
                         <p
                             class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
                             <svg class="h-4 fill-current text-logo-700 pr-4" xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@
                         <div class="pt-12 pb-8">
                             <button
                                 class="border border-logo-700 bg-logo-700 hover:shadow-xl text-white font-bold py-2 px-4 rounded-full">
-                                {{user.Email}}
+                                {{users.Email}}
                             </button>
                         </div>
 
@@ -112,7 +112,7 @@
 
 <!-- </div> -->
 <!-- <div class="px-6 py-4  ">
-                <p>{{user.UserId}}. {{user.FirstName}} {{user.LastName}}</p>
-                <p>{{user.Email}} </p>
-                <p>{{user.Bio}}</p>
+                <p>{{users.UserId}}. {{users.FirstName}} {{users.LastName}}</p>
+                <p>{{users.Email}} </p>
+                <p>{{users.Bio}}</p>
             </div> -->
