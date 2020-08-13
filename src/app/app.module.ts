@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
-import { PostdataService } from './postdata.service'
+
 import { AppRoutingModule } from './app-routing.module';
+import { PostdataService } from './services/postdata.service'
+
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './componets/user-profile/user-profile.component';
 import { HomeComponent } from './componets/home/home.component';
@@ -12,8 +14,7 @@ import { MissionsProfileComponent } from './componets/missions-profile/missions-
 import { LoginComponent } from './componets/login/login.component';
 import { MapCardComponent } from './componets/map-card/map-card.component';
 import { AdminComponent } from './componets/admin/admin.component';
-/* import { SignUpComponent } from './componets/sign-up/sign-up.component'; */
-
+import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { AdminComponent } from './componets/admin/admin.component';
     LoginComponent,
     MapCardComponent,
     AdminComponent,
-   /*  SignUpComponent, */
+    SignUpComponent,
   
   ],
   imports: [

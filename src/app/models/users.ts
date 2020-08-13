@@ -1,11 +1,11 @@
 export class users {
-    UserId: string;
-    FirstName: string;
-    LastName: string; 
-    Email: string;
-    Username: string; 
-    Password: string; 
-    Missionary: boolean;
-    phoneNumber: number;
+    userId: string;
+    firstName: string;
+    lastName: string; 
+    email: string;
+    username: string; 
+    password: string; 
+    missionary: boolean;
+    phoneNumber: string;
     bio: string;
 }

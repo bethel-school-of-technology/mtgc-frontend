@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MapsService } from '../../maps.service';
+import { MapsService } from '../../services/maps.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 // import { MapCardComponent } from '../map-card/map-card.component';
 
@@ -31,12 +31,12 @@ export class HomeComponent {
 
     
 
-    this.map.missionsLocation().subscribe((location: any) =>{
-      console.log(location.results);
-     /*  this.mklat = location.latitude;
-      this.mklng = .longitude; */
-      this.markerLocation = location.results
-    })
+    // this.map.missionsLocation().subscribe((location: any) =>{
+    //   console.log(location.results);
+    //  /*  this.mklat = location.latitude;
+    //   this.mklng = .longitude; */
+    //   this.markerLocation = location.results
+    // })
     
   }
   

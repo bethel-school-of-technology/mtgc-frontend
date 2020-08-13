@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { users } from './models/users';
+import { users } from '../models/users';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -23,8 +23,8 @@ export class PostdataService {
   }
 
   // POST
-  CreateUser(data): Observable<users> {
-    return this.http.post<users>(this.baseurl + '/users/signup/', JSON.stringify(data), this.httpOptions)
+  CreateUser(user: users): Observable<users> {
+    return this.http.post<users>(this.baseurl + '/users/signup/', JSON.stringify(user), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.errorHandl)

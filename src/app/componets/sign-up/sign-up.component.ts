@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostdataService } from '../../postdata.service';
+import { PostdataService } from '../../services/postdata.service';
+import { users } from '../../models/users';
 
 
 @Component({
@@ -8,27 +9,20 @@ import { PostdataService } from '../../postdata.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
+  newUser: users = new users();
   UserArr: any = [];
   constructor(public postdataService: PostdataService) { }
 
   ngOnInit() {
-    this.addUser()
   }
-  addUser() {
-    ({
-      firstName: [''],
-      lastName: [''],
-      phoneNumber: [''],
-      userName: [''],
-      email: [''],
-      password: [''],
-      bio: [ '']
-    })
+  
+  addUser(){
+    this.postdataService
+    .CreateUser(this.newUser)
+    .subscribe(res=>{
+      alert('Account successfully Created!')
+    });
+
   }
 
- submitForm(){
-  this.postdataService.CreateUser(this.addUser).subscribe(res => {
-    console.log('user added!')
- });
- }
 }
