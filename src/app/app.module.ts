@@ -17,7 +17,11 @@ import { AdminComponent } from './componets/admin/admin.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule } from "@angular/material";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatSidenavModule} from "@angular/material/sidenav";
+import { MatListModule} from "@angular/material/list";
+import { MatButtonModule} from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
