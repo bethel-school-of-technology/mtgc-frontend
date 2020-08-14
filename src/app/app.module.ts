@@ -15,6 +15,9 @@ import { LoginComponent } from './componets/login/login.component';
 import { MapCardComponent } from './componets/map-card/map-card.component';
 import { AdminComponent } from './componets/admin/admin.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -33,6 +36,14 @@ import { SignUpComponent } from './componets/sign-up/sign-up.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyCWafOd1xDijhEnzrK836Bk3yaLgJbx9tk'
     })
