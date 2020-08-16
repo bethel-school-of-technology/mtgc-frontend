@@ -74,8 +74,8 @@
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="password" type="password" placeholder="*************" [(ngModel)]="newUser.password"
-                [ngModelOptions]="{standalone: true}" required>
-            <p class="text-gray-600 text-xs italic">We're gonna salt it!</p>
+                name="password" required>
+            <p class="text-gray-600 text-xs italic">We're gonna salt it or not we have not decided yet!</p>
         </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-6">
@@ -86,7 +86,7 @@
             <textarea
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="bio" name="bio" type="text" placeholder="" [(ngModel)]="newUser.bio"></textarea>
-            <p class="text-gray-600 text-xs italic">Tell us about yourself</p>
+            <p class="text-gray-600 text-xs italic">Tell us about yourself. brittani is nosey so... </p>
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
         </div>
     </div>

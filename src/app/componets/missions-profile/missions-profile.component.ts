@@ -17,7 +17,7 @@ export class MissionsProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addUser(){
+  addMission(){
     this.postdataService
     .createMission(this.newMission)
     .subscribe(res=>{

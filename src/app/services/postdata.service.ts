@@ -96,7 +96,7 @@ export class PostdataService {
   // mission create
   
   createMission(mission_info: missions): Observable<missions> {
-    return this.http.post<missions>(this.baseurl + '/mission_info/mission_signup/', JSON.stringify(missions), this.httpOptions)
+    return this.http.post<missions>(this.baseurl + '/mission_info/mission_signup', JSON.stringify(missions), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.errorHandl)

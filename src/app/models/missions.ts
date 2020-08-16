@@ -4,8 +4,10 @@ export class missions {
     city: string;
     state:  string;
     zip: string;
-    mcissionLocationCity:  string;
+    organizationCounty: string
+    missionLocationCity:  string;
     missionLocationCountry: string;
     image: Blob;
+    bio: string;
 }
 
