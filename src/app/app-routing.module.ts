@@ -8,11 +8,19 @@ import { AboutComponent } from './componets/about/about.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
 import { AdminComponent } from './componets/admin/admin.component';
 
+
 const routes: Routes = [
 
   {
+    path:'',
+    redirectTo:'home',
+    pathMatch:'full'
+  },
+
+  {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    
   },
   {
    path: 'user-profile',

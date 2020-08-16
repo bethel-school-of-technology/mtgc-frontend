@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { users } from '../models/users';
+import { missions } from '../models/missions'
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -84,10 +85,22 @@ export class PostdataService {
        errorMessage = error.error.message;
      } else {
        // Get server-side error
-       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+       errorMessage = `Error Code: ${error.status}Message: ${error.message}`;
      }
      console.log(errorMessage);
      return throwError(errorMessage);
   }
+
+  // mission handling
+
+  // mission create
+  
+  createMission(mission_info: missions): Observable<missions> {
+    return this.http.post<missions>(this.baseurl + '/mission_info/mission_signup/', JSON.stringify(missions), this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    )
+  } 
 
 }

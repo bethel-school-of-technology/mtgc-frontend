@@ -72,10 +72,14 @@
 
 <script>
 	//Javascript to toggle the menu
-	document.getElementById('nav-toggle').onclick = function () {
-		document.getElementById("nav-content").classList.toggle("hidden");
+	document.getElementById('nav-content').onclick = function () {
+		document.getElementById("nav-toggle").classList.toggle("hidden");
 	}
 </script>
+<!-- <script>
+	const menu = document.getElementById('nav-content');
+	const toggle = () => menu.classList.toggle("hidden");
+  </script> -->
 
 
 <router-outlet></router-outlet>

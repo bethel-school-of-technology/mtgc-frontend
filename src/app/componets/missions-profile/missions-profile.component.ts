@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostdataService } from '../../services/postdata.service';
+import { missions } from '../../models/missions'
 
 @Component({
   selector: 'app-missions-profile',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MissionsProfileComponent implements OnInit {
 
-  constructor() { }
+  newMission: missions= new missions();
+  UserArr: any = [];
+  constructor(public postdataService: PostdataService) { }
+
 
   ngOnInit(): void {
+  }
+
+  addUser(){
+    this.postdataService
+    .createMission(this.newMission)
+    .subscribe(res=>{
+      alert('Mission successfully Created!')
+    });
+
   }
 
 }
