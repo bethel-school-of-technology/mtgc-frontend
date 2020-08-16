@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostdataService } from '../../services/postdata.service';
 
 @Component({
   selector: 'app-about',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  MissionList: any = [];
+  
+  
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.missionList();
   }
 
+  constructor(
+    public postdataService: PostdataService
+  ) { }
+
+
+  
+  missionList(){
+    return this.postdataService.missionList().subscribe((missionList: {})=>{
+      this.MissionList = missionList;
+    })
+  }
 }

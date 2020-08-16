@@ -21,6 +21,7 @@ export class MissionsProfileComponent implements OnInit {
     this.postdataService
     .createMission(this.newMission)
     .subscribe(res=>{
+      console.log(this.newMission),
       alert('Mission successfully Created!')
     });
 
