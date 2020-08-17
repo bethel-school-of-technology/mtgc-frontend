@@ -99,17 +99,28 @@
             <!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
             
         </div>
-        <div>
-            <h1>Users </h1>
-
-
-            <ul *ngFor="let users of Userlist">
-                 
-                <li>{{users.FirstName}} {{users.LastName}}</li>
-                <li>Email: {{users.Email}}</li>
-                <li>Username: {{users.Username}}</li>
+        <div *ngIf="currentUser; else loggedOut">
+            <header class="jumbotron">
+              <h3>
+                <strong>{{ currentUser.username }}</strong> Profile
+              </h3>
+            </header>
+           
+            <p>
+              <strong>Email:</strong>
+              {{ currentUser.email }}
+            </p>
+            <strong>Roles:</strong>
+            <ul>
+              <li *ngFor="let role of currentUser.roles">
+                {{ role }}
+              </li>
             </ul>
-        </div>
+          </div>
+          
+          <ng-template #loggedOut>
+            Please login.
+          </ng-template>
 
         <!-- <div class="p-5 w-2/3 flex flex-col justify-center items-center "> --> <!-- LEFT SIDE OF FORM: profile picture & BIO -->
            <!--  <div class="flex flex-col mb-5 w-full">

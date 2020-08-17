@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostdataService } from '../../services/postdata.service';
+import { TokenStorageService } from '../../services/token-storage.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,22 +7,13 @@ import { PostdataService } from '../../services/postdata.service';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  Userlist: any = [];
+  currentUser: any;
 
+
+
+  constructor(private token: TokenStorageService) { }
 
   ngOnInit() {
-    this.loadUser();
-  }
-
-  constructor(
-    public postdataService: PostdataService
-  ){ }
-
-   // Users list
-   loadUser() {
-    return this.postdataService.GetUsers().subscribe((data: {}) => {
-      this.Userlist = data;
-    
-    })
+    this.currentUser = this.token.getUser();
   }
 }

@@ -22,6 +22,21 @@ export class PostdataService {
     })
   }
 
+  getPublicContent(): Observable<any> {
+    return this.http.get(this.baseurl + '/users/all', { responseType: 'text' });
+  }
+
+  getUserBoard(): Observable<any> {
+    return this.http.get(this.baseurl + '/users/user', { responseType: 'text' });
+  }
+
+  getModeratorBoard(): Observable<any> {
+    return this.http.get(this.baseurl + '/users/mod', { responseType: 'text' });
+  }
+
+  getAdminBoard(): Observable<any> {
+    return this.http.get(this.baseurl + '/users/admin', { responseType: 'text' });
+  }
   // POST
   CreateUser(user: users): Observable<users> {
     return this.http.post<users>(this.baseurl + '/users/signup/', JSON.stringify(user), this.httpOptions)

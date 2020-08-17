@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostdataService } from '../../services/postdata.service';
 import { users } from '../../models/users';
-
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,20 +9,27 @@ import { users } from '../../models/users';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  newUser: users = new users();
-  UserArr: any = [];
-  constructor(public postdataService: PostdataService) { }
+  form: any = {};
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
-  
-  addUser(){
-    this.postdataService
-    .CreateUser(this.newUser)
-    .subscribe(res=>{
-      alert('Account successfully Created!')
-    });
-
+  onSubmit() {
+    this.authService.register(this.form).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
+  
 
 }

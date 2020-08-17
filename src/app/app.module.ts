@@ -4,17 +4,17 @@ import { HttpClientModule } from '@angular/common/http'
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 
+import { PostdataService } from './services/postdata.service';
 import { AppRoutingModule } from './app-routing.module';
-import { PostdataService } from './services/postdata.service'
-
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './componets/user-profile/user-profile.component';
 import { HomeComponent } from './componets/home/home.component';
 import { MissionsProfileComponent } from './componets/missions-profile/missions-profile.component';
 import { LoginComponent } from './componets/login/login.component';
 import { MapCardComponent } from './componets/map-card/map-card.component';
-import { AdminComponent } from './componets/admin/admin.component';
-import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
+import { SignUpComponent } from './componets/sign-up/sign-up.component';
+import { Observable } from 'rxjs';
+import { AuthInterceptor } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import { SignUpComponent } from './componets/sign-up/sign-up.component';
     MissionsProfileComponent,
     LoginComponent,
     MapCardComponent,
-    AdminComponent,
     SignUpComponent,
+    
   
   ],
   imports: [
@@ -37,7 +37,12 @@ import { SignUpComponent } from './componets/sign-up/sign-up.component';
       apiKey:'AIzaSyCWafOd1xDijhEnzrK836Bk3yaLgJbx9tk'
     })
   ],
-  providers: [PostdataService ],
+  providers: [ 
+   
+    PostdataService,
+    AuthInterceptor
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
