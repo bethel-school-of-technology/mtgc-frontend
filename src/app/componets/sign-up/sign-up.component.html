@@ -27,7 +27,7 @@ novalidate
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="firstName" name="firstName" type="text" placeholder="Jane" [(ngModel)]="newUser.firstName" required>
+                id="firstName" name="firstName" type="text" placeholder="Jane" [(ngModel)]="form.firstName" required>
 
         </div>
         <div class="w-full md:w-1/2 px-3">
@@ -36,7 +36,7 @@ novalidate
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="lastName" name="lastName" type="text" placeholder="Doe" [(ngModel)]="newUser.lastName" required>
+                id="lastName" name="lastName" type="text" placeholder="Doe" [(ngModel)]="form.lastName" required>
         </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-6">
@@ -46,7 +46,7 @@ novalidate
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="email" name="email" type="text" placeholder="jesus@dachrist.com" [(ngModel)]="newUser.email"
+                id="email" name="email" type="text" placeholder="jesus@dachrist.com" [(ngModel)]="form.email"
                 required>
             <p class="text-gray-600 text-xs italic">Remember to keep it professional Sparkles</p>
         </div>
@@ -57,7 +57,7 @@ novalidate
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="phoneNumber" name="phoneNumber" type="text" placeholder="xxx-xxx-xxxx"
-                [(ngModel)]="newUser.phoneNumber">
+                [(ngModel)]="form.phoneNumber">
             <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
         </div>
     </div>
@@ -68,7 +68,7 @@ novalidate
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="username" name="username" type="text" placeholder="savior_complex" [(ngModel)]="newUser.username"
+                id="username" name="username" type="text" placeholder="savior_complex" [(ngModel)]="form.username"
                 required>
             <p class="text-gray-600 text-xs italic">Anything will do</p>
         </div>
@@ -78,7 +78,7 @@ novalidate
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="password" type="password" placeholder="*************" [(ngModel)]="newUser.password"
+                id="password" type="password" placeholder="*************" [(ngModel)]="form.password"
                 [ngModelOptions]="{standalone: true}" required>
             <p class="text-gray-600 text-xs italic">We're gonna salt it!</p>
         </div>
@@ -90,7 +90,7 @@ novalidate
             </label>
             <textarea
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="bio" name="bio" type="text" placeholder="" [(ngModel)]="newUser.bio"></textarea>
+                id="bio" name="bio" type="text" placeholder="" [(ngModel)]="form.bio"></textarea>
             <p class="text-gray-600 text-xs italic">Tell us about yourself</p>
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
         </div>
