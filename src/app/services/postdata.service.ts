@@ -37,15 +37,7 @@ export class PostdataService {
   getAdminBoard(): Observable<any> {
     return this.http.get(this.baseurl + '/users/admin', { responseType: 'text' });
   }
-  // POST
-  CreateUser(user: users): Observable<users> {
-    return this.http.post<users>(this.baseurl + '/users/signup/', JSON.stringify(user), this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.errorHandl)
-    )
-  }  
-
+  
   // GET
   GetUser(id): Observable<users> {
     return this.http.get<users>(this.baseurl + '/users/profile/' + id)
