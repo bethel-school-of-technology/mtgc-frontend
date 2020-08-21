@@ -77,7 +77,7 @@
 	}
 </script> -->
 
-<div style="height: 80vh;">
+<div style="height: 10vh;">
 	<mat-toolbar color="primary">
 	  <mat-toolbar-row>
 		<button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
@@ -87,7 +87,7 @@
 		<span>
 			<div class="flex items-center flex-shrink-0 mr-6">
 			<a routerLink="home" routerLinkActive="active">
-				<img alt="logo" class="w-48 mr-2 shadow-lg" src="../assets/images/Logo.png">
+				<img alt="logo" class="w-40 mr-2 shadow-lg" src="../assets/images/Logo.png">
 			</a>
 		</div>
 	</span>
@@ -123,15 +123,16 @@
 	</mat-toolbar>
   
 	<mat-sidenav-container fxFlexFill>
-	  <mat-sidenav #sidenav>
+	  <mat-sidenav #sidenavap>
+		  
 		<mat-nav-list>
-		  <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-		  <a routerLink="home" mat-list-item>Home</a>
-		  <a routerLink="user-profile"  mat-list-item>User Profile</a>
-		  <a routerLink="about" mat-list-item>About</a>
-		  <a routerLink="missions-profile" mat-list-item>Missions Profile</a>
-		  <a routerLink="login" mat-list-item>Login</a>
-		  <a routerLink="signup"mat-list-item>Signup</a>
+		  <!-- <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a> -->
+		  <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"routerLink="home" mat-list-item>Home</a>
+		  <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"routerLink="user-profile"  mat-list-item>User Profile</a>
+		  <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"routerLink="about" mat-list-item>About</a>
+		  <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"routerLink="missions-profile" mat-list-item>Missions Profile</a>
+		  <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"routerLink="login" mat-list-item>Login</a>
+		  <a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"routerLink="signup"mat-list-item>Signup</a>
 		</mat-nav-list>
 	  </mat-sidenav>
 	  
