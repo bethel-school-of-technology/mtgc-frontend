@@ -31,12 +31,12 @@ export class HomeComponent {
 
     
 
-    // this.map.missionsLocation().subscribe((location: any) =>{
-    //   console.log(location.results);
-    //  /*  this.mklat = location.latitude;
-    //   this.mklng = .longitude; */
-    //   this.markerLocation = location.results
-    // })
+     this.map.missionsLocation().subscribe((location: any) =>{
+       console.log(location.results);
+      /*  this.mklat = location.latitude;
+       this.mklng = .longitude; */
+       this.markerLocation = location.results
+     })
     
   }
   

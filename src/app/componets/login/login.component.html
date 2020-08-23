@@ -1,4 +1,4 @@
-<div class="bg-white rounded shadow-lg flex flex-row w-full" style="height:500px">
+<div class="bg-white rounded shadow-lg flex flex-row w-full" style="height:700px">
     <div class="hidden md:block w-1/2 bg-cover bg-center h-full flex-shrink-0 shadow-2xl"
         style="background-image:url(https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1534&amp;q=80)">
     </div>
@@ -17,7 +17,7 @@
                     class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
                     id="username" type="text" placeholder="username"  [(ngModel)]="form.username"
                     required
-                    #username="ngModel">
+                    #username="ngModel" name="username">
                    
                     <div
                     role="alert"
@@ -35,7 +35,7 @@
                     id="passsword" type="text" placeholder="password"  [(ngModel)]="form.password"
                     required
                     minlength="6"
-                    #password="ngModel">
+                    #password="ngModel" name="password">
                 <div
           
           role="alert"
@@ -64,7 +64,4 @@
         </div>
     </form>
 
-    <div *ngIf="isLoggedIn">
-        Logged in as {{ roles }}.
-      </div>
 </div>

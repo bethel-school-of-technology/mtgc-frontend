@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostdataService } from '../../services/postdata.service';
 import { users } from '../../models/users';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +14,7 @@ export class SignUpComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router : Router) { }
 
   ngOnInit() {
   }
@@ -23,8 +24,9 @@ export class SignUpComponent implements OnInit {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.router.navigate(['/login'])
       },
-      err => {
+            err => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }

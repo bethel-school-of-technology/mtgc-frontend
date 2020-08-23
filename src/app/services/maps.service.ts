@@ -22,9 +22,9 @@ export class MapsService {
     return this.http.get<Location>('http://api.ipapi.com/api/check?access_key=24ae37244c9461ee92444e0003593ef3')
   }
 
-  // missionsLocation(){
-  //   return this.http.get<Markers>('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA;8313+Muirwood+Trail,+Fort+Worth,TX;16031+Deblin+Square,+Hammond,+LA&key=AIzaSyCyq9CtZmKymMGxQOsgmoGPxgREjLuCR7c')
-  // }
+  missionsLocation(){
+    return this.http.get<Markers>('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA;8313+Muirwood+Trail,+Fort+Worth,TX;16031+Deblin+Square,+Hammond,+LA&key=AIzaSyCyq9CtZmKymMGxQOsgmoGPxgREjLuCR7c')
+  }
 }
 
 /* `https://maps.googleapis.com/maps/api/geocode/json?address=${}` */

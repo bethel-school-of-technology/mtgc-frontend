@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { users } from '../models/users';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-
+import { missions } from '../models/missions'
 @Injectable({
   providedIn: 'root'
 })
@@ -105,4 +105,20 @@ export class PostdataService {
      return throwError(errorMessage);
   }
 
+  createMission(mission_info: missions): Observable<missions> {
+    return this.http.post<missions>(this.baseurl + '/mission_info/mission_signup/', JSON.stringify(mission_info), this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    )
+  } 
+
+
+  missionList(): Observable<missions>{
+    return this.http.get<missions>(this.baseurl + '/mission_info/missionList')
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    )
+  }
 }
