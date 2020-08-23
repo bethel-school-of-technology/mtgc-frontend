@@ -15,6 +15,7 @@ import { LoginComponent } from './componets/login/login.component';
 import { MapCardComponent } from './componets/map-card/map-card.component';
 import { AdminComponent } from './componets/admin/admin.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
+//Material import
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from "@angular/material/toolbar";
