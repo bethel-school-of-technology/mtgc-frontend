@@ -88,8 +88,8 @@
 				</div>
 			</span>
 
-			<div fxShow="true" fxHide.lt-md
-				class="justify-end w-full flex-grow lg:flex lg:items-center lg:w-auto hidden  pt-6 lg:pt-0"
+			<div fxShow="true" fxHide.lt-sm
+				class="justify-end w-full flex-grow lg:flex lg:items-center lg:w-auto hidden pt-6 lg:pt-0"
 				id="nav-content">
 				<!-- The following menu items are for screen sizes above Small size -->
 				<a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"
@@ -106,9 +106,9 @@
 					routerLink="signup" mat-button>Signup</a>
 			</div>
 
-			<div class="relative sm:justify-end">
-				<button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
-					<span class="material-icons ">menu </span>
+			<div class="relative">
+				<button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-md>
+					<span class="material-icons">Menu </span>
 				</button>
 			</div>
 
@@ -116,9 +116,9 @@
 	</mat-toolbar>
 	<!-- Menu items for Hamburger -->
 	<mat-sidenav-container fxFlexFill>
-		<mat-sidenav #sidenav>
+		<mat-sidenav #sidenav class="bg-gray-400 sm:justify-end">
 			<mat-nav-list>
-				<!-- <a (click)="sidenav.toggle()"  mat-list-item>Close</a>  -->
+				<a (click)="sidenav.toggle()"  mat-list-item>Close</a> 
 				<a routerLink="home" mat-list-item>Home</a>
 				<a routerLink="user-profile" mat-list-item>User Profile</a>
 				<a routerLink="about" mat-list-item>About</a>
@@ -128,45 +128,46 @@
 			</mat-nav-list>
 		</mat-sidenav>
 
+		<mat-sidenav-content>
+			<router-outlet></router-outlet>
+			<footer
+				class='flex items-center justify-center flex-wrap w-full text-center border-t border-grey p-1 pin-b bg-gray-100'>
+				<div class="flex flex-wrap justify-center p-1">
+					<div class="flex flex-wrap mb-2 w-full">
+						<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 ">
+							<h3 class="text-2xl py-4">About Us</h3>
+							<p>This application was produced by Bethel School of Technology students: Brittani Falor, Colin
+								Cantwell, Scott Goodwin and Connor Chaffin. This web application is built on an Angular Front-end
+								Framework and sourced from a SQL Database using Express/Node.js Back-end.
+							</p>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 pl-8">
+							<h3 class="text-2xl py-4">Contact Us</h3>
+							<ul>
+								<li>Phone: <a href="#">900-800-2357</a></li>
+								<li>Email: <a href="#">globalmissions@mtgc.com</a></li>
+							</ul>
+							<h3 class="text-xl py-4">
+								<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:font-normal py-2 px-4"
+									routerLink="admin" routerLinkActive="active">Admin</a>
+							</h3>
+			
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 ">
+							<h3 class="text-2xl py-4">GitHub Links</h3>
+							<ul>
+								<li><a href="https://github.com/Cantwell136">Colin Cantwell</a></li>
+								<li><a href="https://github.com/scottyg68">Scott Goodwin</a></li>
+								<li><a href="https://github.com/BrittaniFalor">Brittani Falor</a></li>
+								<li><a href="https://github.com/connor-chaffin">Connor Chaffin</a></li>
+							</ul>
+						</div>
+			
+					</div>
+				</div>
+			</footer>
+		</mat-sidenav-content>
 	</mat-sidenav-container>
 </div>
 
-<router-outlet></router-outlet>
 
-
-<footer
-	class='flex items-center justify-center flex-wrap w-full text-center border-t border-grey p-1 pin-b bg-gray-100'>
-	<div class="flex flex-wrap justify-center p-1">
-		<div class="flex flex-wrap mb-2 w-full">
-			<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 ">
-				<h3 class="text-2xl py-4">About Us</h3>
-				<p>This application was produced by Bethel School of Technology students: Brittani Falor, Colin
-					Cantwell, Scott Goodwin and Connor Chaffin. This web application is built on an Angular Front-end
-					Framework and sourced from a SQL Database using Express/Node.js Back-end.
-				</p>
-			</div>
-			<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 pl-8">
-				<h3 class="text-2xl py-4">Contact Us</h3>
-				<ul>
-					<li>Phone: <a href="#">900-800-2357</a></li>
-					<li>Email: <a href="#">globalmissions@mtgc.com</a></li>
-				</ul>
-				<h3 class="text-xl py-4">
-					<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:font-normal py-2 px-4"
-						routerLink="admin" routerLinkActive="active">Admin</a>
-				</h3>
-
-			</div>
-			<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 ">
-				<h3 class="text-2xl py-4">GitHub Links</h3>
-				<ul>
-					<li><a href="https://github.com/Cantwell136">Colin Cantwell</a></li>
-					<li><a href="https://github.com/scottyg68">Scott Goodwin</a></li>
-					<li><a href="https://github.com/BrittaniFalor">Brittani Falor</a></li>
-					<li><a href="https://github.com/connor-chaffin">Connor Chaffin</a></li>
-				</ul>
-			</div>
-
-		</div>
-	</div>
-</footer>
