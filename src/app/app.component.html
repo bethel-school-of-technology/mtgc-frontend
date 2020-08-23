@@ -80,11 +80,6 @@
 <div class="flex sticky justify-between flex-wrap shadow-md bg-gray-100 p-4 w-full z-20 top-0">
 	<mat-toolbar class="flex items-center mr-6">
 		<mat-toolbar-row>
-			<button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm class="sm:top-0 sm:right-0">
-				<span class="material-icons ">
-					menu
-					</span>
-			</button>
 			<span>
 				<div class="flex mr-6 ">
 					<a routerLink="home" routerLinkActive="active">
@@ -92,8 +87,10 @@
 					</a>
 				</div>
 			</span>
-			
-			<div fxShow="true" fxHide.lt-md class="justify-end w-full flex-grow lg:flex lg:items-center lg:w-auto hidden  pt-6 lg:pt-0" id="nav-content">
+
+			<div fxShow="true" fxHide.lt-md
+				class="justify-end w-full flex-grow lg:flex lg:items-center lg:w-auto hidden  pt-6 lg:pt-0"
+				id="nav-content">
 				<!-- The following menu items are for screen sizes above Small size -->
 				<a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"
 					routerLink="home" mat-button>Home</a>
@@ -108,14 +105,19 @@
 				<a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"
 					routerLink="signup" mat-button>Signup</a>
 			</div>
-			
+
+			<div class="relative sm:justify-end">
+				<button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+					<span class="material-icons ">menu </span>
+				</button>
+			</div>
 
 		</mat-toolbar-row>
 	</mat-toolbar>
 	<!-- Menu items for Hamburger -->
-	<mat-sidenav-container fxFlexFill >
+	<mat-sidenav-container fxFlexFill>
 		<mat-sidenav #sidenav>
-			<mat-nav-list >
+			<mat-nav-list>
 				<!-- <a (click)="sidenav.toggle()"  mat-list-item>Close</a>  -->
 				<a routerLink="home" mat-list-item>Home</a>
 				<a routerLink="user-profile" mat-list-item>User Profile</a>
