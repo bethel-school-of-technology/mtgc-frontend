@@ -1,7 +1,7 @@
 <!-- Source for form layout. Note: custom built for this form, but referenced from the following:
 https://tailwindcss-custom-forms.netlify.app/ -->
 
-<div class="bg-gray-100 rounded shadow-lg flex flex-row w-full" style="height:500px">
+<div class="bg-gray-100 rounded shadow-lg flex flex-row w-full items-start" style="height:700px">
     <div class="hidden md:block w-1/3 bg-cover bg-center h-full flex-shrink-0 ">
         <div class="bg-white shadow-lg w-3/4 m-12 border rounded-lg overflow-hidden"> <!-- ORG CARD -->
             <img class="h-48 w-full object-cover" src="../../../assets/images/placeholder-img.jpg">
@@ -19,7 +19,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
             </div>
           </div>
     </div>
-    <div class="p-5 w-2/3 flex flex-col justify-center items-center"> <!-- LEFT SIDE OF FORM: LOGO & BIO -->
+    <div class="p-5 w-2/3 flex flex-col justify-center items mt-8"> <!-- LEFT SIDE OF FORM: LOGO & BIO -->
         <div class="flex flex-col mb-5 w-full">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="logo"> Organization Logo </label>
             <input
@@ -33,7 +33,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                 id="bio" type="text" placeholder="Short summary of what you're most known for"></textarea>
         </div>
     </div>
-    <div class="p-4 w-full flex flex-col justify-center mt-20 items-center"> <!-- RIGHT SIDE OF FORM: NAME & LOCATION -->
+    <div class="p-4 w-full flex flex-col justify-center mt-8"> <!-- RIGHT SIDE OF FORM: NAME & LOCATION -->
 
         <div class="flex flex-col mb-4 w-full">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="org-name"> Organization Name </label>
