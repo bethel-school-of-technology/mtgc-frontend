@@ -14,11 +14,11 @@ export class SignUpComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  constructor(private authService: AuthService, private router : Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
- onSubmit() {
+  onSubmit() {
     this.authService.register(this.user).subscribe(
       newUser => {
         console.log(newUser);
@@ -26,12 +26,12 @@ export class SignUpComponent implements OnInit {
         this.isSignUpFailed = false;
         this.router.navigate(['/login'])
       },
-            err => {
+      err => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
     );
-  } 
-  
+  }
+
 
 }

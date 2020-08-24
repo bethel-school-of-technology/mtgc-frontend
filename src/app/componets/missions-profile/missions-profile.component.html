@@ -6,16 +6,16 @@ https://tailwindcss-custom-forms.netlify.app/ -->
         <div class="hidden md:block w-1/3 bg-cover bg-center h-full flex-shrink-0 ">
             <div class="bg-white shadow-lg w-3/4 m-12 border rounded-lg overflow-hidden">
                 <!-- ORG CARD -->
-                <img class="h-48 w-full object-cover" >{{newMission.image}}
+                <img class="h-48 w-full object-cover" >{{mission.image}}
                 <div class="p-4">
                     <div class="flex items-center">
-                        <h4 class="font-semibold text-lg text-gray-900 tracking-wide">{{newMission.organizationName}}</h4>
+                        <h4 class="font-semibold text-lg text-gray-900 tracking-wide">{{mission.organizationName}}</h4>
                         <span
                             class="inline-block bg-logo-600 text-white text-xs px-2 rounded-full uppercase font-semibold  tracking-wider ml-auto  shadow-md">Verified</span>
 
                     </div>
-                    <div class="text-gray-700 text-sm uppercase font-semibold  tracking-wider leading-tight mt-1">{{newMission.organizationStreetAddress}}<br>{{newMission.city}} {{newMission.state}} {{newMission.zip}} {{newMission.organizationCountry}}</div>
-                    <div class="text-logo-800 font-semibold text-xs mt-1">Org Bio: {{newMission.bio}}</div>
+                    <div class="text-gray-700 text-sm uppercase font-semibold  tracking-wider leading-tight mt-1">{{mission.organizationStreetAddress}}<br>{{mission.city}} {{mission.state}} {{mission.zip}} {{mission.organizationCountry}}</div>
+                    <div class="text-logo-800 font-semibold text-xs mt-1">Org Bio: {{mission.bio}}</div>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                     Logo </label>
                 <input
                     class="bg-gray-100 appearance-none border shadow border-gray-500 rounded w-full py-10 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-                    id="logo" type="file" accept="image" [(ngModel)]="newMission.image" name="image">
+                    id="logo" type="file" accept="image" [(ngModel)]="mission.image" name="image">
             </div>
             <div class="flex flex-col mb-5 w-full">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="bio"> Bio
@@ -36,7 +36,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                 <textarea
                     class="bg-gray-100 appearance-none border shadow border-gray-500 rounded w-full py-24 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500" 
                     id="bio" type="text" placeholder="Short summary of what you're most known for"
-                    [(ngModel)]="newMission.bio" name="bio"></textarea>
+                    [(ngModel)]="mission.bio" name="bio"></textarea>
             </div>
         </div>
         <div class="p-4 w-full flex flex-col justify-center mt-20 items-center">
@@ -47,7 +47,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                     Organization Name </label>
                 <input
                     class="appearance-none block w-full bg-gray-100 text-gray-700 border shadow border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="org-name" type="text" placeholder="Organization Name" [(ngModel)]="newMission.organizationName"
+                    id="org-name" type="text" placeholder="Organization Name" [(ngModel)]="mission.organizationName"
                     name="orgName" required>
             </div>
             <div class="flex flex-col mb-4 w-full">
@@ -56,14 +56,14 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                 <input
                     class="appearance-none block w-full bg-gray-100 text-gray-700 border shadow border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="org-street" type="text" placeholder="Street Address"
-                    [(ngModel)]="newMission.organizationStreetAddress" name="org-street" required>
+                    [(ngModel)]="mission.organizationStreetAddress" name="org-street" required>
             </div>
             <div class="flex flex-col mb-4 w-full">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="org-city">
                     City </label>
                 <input
                     class="appearance-none block w-full bg-gray-100 text-gray-700 border shadow border-gray-500 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="org-city" type="text" placeholder="City" [(ngModel)]="newMission.city" name="org-city" required>
+                    id="org-city" type="text" placeholder="City" [(ngModel)]="mission.city" name="org-city" required>
             </div>
 
             <div class="flex flex-wrap -mx-3 mb-4">
@@ -74,7 +74,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                     <div class="relative">
                         <select
                             class="block appearance-none w-full bg-gray-100 border border-gray-500 shadow text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="org-state" [(ngModel)]="newMission.state" name="org-state" required>
+                            id="org-state" [(ngModel)]="mission.state" name="org-state" required>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -142,7 +142,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                     </label>
                     <input
                         class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 shadow rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="org-zip" type="text" placeholder="90210" [(ngModel)]="newMission.zip" name="org-zip" required>
+                        id="org-zip" type="text" placeholder="90210" [(ngModel)]="mission.zip" name="org-zip" required>
                 </div>
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="org-country">
@@ -151,7 +151,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                     <div class="relative">
                         <select
                             class="block appearance-none w-full bg-gray-100 border border-gray-500 shadow text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="org-country" [(ngModel)]="newMission.organizationCountry" name="org-country" required>
+                            id="org-country" [(ngModel)]="mission.organizationCountry" name="org-country" required>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
                             <option value="Algeria">Algeria</option>
@@ -422,7 +422,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                     <input
                         class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 shadow rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         id="mission-city" type="text" placeholder="Albuquerque"
-                        [(ngModel)]="newMission.missionLocationCity" name="mission-city" required>
+                        [(ngModel)]="mission.missionLocationCity" name="mission-city" required>
                 </div>
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -432,7 +432,7 @@ https://tailwindcss-custom-forms.netlify.app/ -->
                     <div class="relative">
                         <select
                             class="block appearance-none w-full bg-gray-100 border border-gray-500 shadow text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="mission-country" [(ngModel)]="newMission.missionLocationCountry" name="mission-country" required>
+                            id="mission-country" [(ngModel)]="mission.missionLocationCountry" name="mission-country" required>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
                             <option value="Algeria">Algeria</option>

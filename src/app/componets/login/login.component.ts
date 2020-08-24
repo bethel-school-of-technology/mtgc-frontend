@@ -20,12 +20,11 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit() {
-    /* if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
-       */
-    /* } */
-
+    // if(this.tokenStorage.getToken()){
+    //   this.isLoggedIn = true;
+    // }
   }
+  
   onSubmit() {
     this.authService.login(this.user).subscribe(
       data => {

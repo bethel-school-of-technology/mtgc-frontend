@@ -39,6 +39,7 @@ export class AuthService {
 
   regMission(mission): Observable<any> {
     return this.http.post<any>(AUTH_API + '/mission_info/mission_signup/', {
+      
       organizationName: mission.organizationName,
       organizationStreetAddress: mission.organizationStreetAddress,
       city:mission.city,
