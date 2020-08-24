@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  form: any = {};
+  user: any = {};
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   }
   onSubmit() {
-    this.authService.login(this.form).subscribe(
+    this.authService.login(this.user).subscribe(
       data => {
         console.log(data)
         this.tokenStorage.saveToken(data.accessToken);
