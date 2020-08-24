@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  form: any = {};
+  user: any = {};
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
@@ -19,9 +19,9 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
  onSubmit() {
-    this.authService.register(this.form).subscribe(
-      data => {
-        console.log(data);
+    this.authService.register(this.user).subscribe(
+      newUser => {
+        console.log(newUser);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         this.router.navigate(['/login'])
