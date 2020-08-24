@@ -10,13 +10,13 @@
                     Username </label>
                 <input
                     class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-                    id="email" type="text" placeholder="username" [(ngModel)]="user.username">
+                    id="email" type="text" placeholder="username" name="username" [(ngModel)]="user.username">
             </div>
             <div class="flex flex-col w-full"> <label class="block text-gray-700 text-sm font-medium pb-1" for="email">
                     Password </label>
                 <input
                     class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-                    id="password" type="text" placeholder="******" [(ngModel)]="user.password">
+                    id="password" type="text" placeholder="******" name="password" [(ngModel)]="user.password">
             </div>
             <button class="bg-gray-700 text-white rounded py-2 px-5 w-64 mt-10">Sign In</button>
         </div>
