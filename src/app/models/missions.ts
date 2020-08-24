@@ -1,4 +1,5 @@
 export class missions {
+    orgId: string;
     organizationName: string;
     organizationStreetAddress: string;
     city: string;

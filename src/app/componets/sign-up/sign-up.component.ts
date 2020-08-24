@@ -18,20 +18,20 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSubmit() {
+ onSubmit() {
     this.authService.register(this.form).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        this.router.navigate(['/login'])
+        this.router.navigate([])
       },
             err => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
     );
-  }
+  } 
   
 
 }
