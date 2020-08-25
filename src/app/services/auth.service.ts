@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { TokenStorageService } from './token-storage.service';
 import { missions } from '../models/missions';
 
-const AUTH_API = 'http://localhost:3000/users/';
+const AUTH_API = 'http://localhost:3000';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,18 +18,14 @@ export class AuthService {
   constructor(private http: HttpClient, private tokenStorage: TokenStorageService) { }
 
   login(credentials): Observable<any> {
-
     return this.http.post<any>(AUTH_API + '/users/signin', {
-
       username: credentials.username,
       password: credentials.password
     }, httpOptions);
   }
 
   register(user): Observable<any> {
-
     return this.http.post<any>(AUTH_API + '/users/signup', {
-
       id: user.id,
       firstName: user.firstName,
       lastName: user.lastName,
