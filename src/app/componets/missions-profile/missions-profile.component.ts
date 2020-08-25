@@ -73,10 +73,10 @@ export class MissionsProfileComponent implements OnInit {
     })
     this.authService.regMission(this.mission).subscribe(
       newMission => {
-        console.log(newMission);
         this.tokenStorage.getToken();
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        console.log(newMission);
       },
       err => {
         this.errorMessage = err.error.message;

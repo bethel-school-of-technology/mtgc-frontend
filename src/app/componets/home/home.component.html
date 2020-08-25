@@ -5,7 +5,6 @@
     <div *ngFor="let marker of markerLocation"><agm-marker [latitude]="marker.geometry.location.lat" [longitude]="marker.geometry.location.lng"></agm-marker></div>
   </agm-map> <!-- DIV FOR MAP -->
   
-<!-- <map-card></map-card> -->
   <!-- This will have to end up being a loop to accomedate for the search/map results -->
   <div class="absolute bg-white shadow-lg w-1/5 m-6 rounded-lg overflow-hidden"> <!-- ORG CARD -->
     <img class="bg-h-40 bg-w-full object-cover" src="../../../assets/images/placeholder-img.jpg">

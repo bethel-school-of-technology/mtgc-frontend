@@ -10,7 +10,10 @@ import { HttpClient } from '@angular/common/http';
 export class ConnectComponent implements OnInit {
   public missions: missions[];
   private missionsRoute = 'http://localhost:3000/mission_info/missionList'
-
+  imageFile: File;
+  blobFile: any;
+  base64File: any;
+  
   constructor(private http: HttpClient) { }
 
 
@@ -18,6 +21,7 @@ export class ConnectComponent implements OnInit {
     this.http.get<missions[]>(this.missionsRoute).subscribe(missions => {
       this.missions = missions
     })
+    
   }
   
   ngOnInit() {
