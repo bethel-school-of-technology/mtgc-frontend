@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { users } from '../models/users';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { TokenStorageService } from './token-storage.service';
+import { missions } from '../models/missions';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class PostdataService {
   // Base url
   baseurl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private tokenStorage: TokenStorageService) { }
 
   // Http Headers
   httpOptions = {
@@ -58,9 +60,17 @@ export class PostdataService {
 
   //GET ADMIN
   GetAdmin(): Observable<users> {
-    return this.http.get<users>(this.baseurl + '/users/admin/')
+    return this.http.get<users>(this.baseurl + '/users/admin/', { headers: { authorization: this.tokenStorage.getToken() } })
     .pipe(
       retry(1),
+      catchError(this.errorHandl)
+    )
+  }
+
+  GetMissions(): Observable<missions[]> {
+    return this.http.get<missions[]>(this.baseurl + '/mission_info/missionList')
+    .pipe(
+      retry(1), 
       catchError(this.errorHandl)
     )
   }
@@ -93,8 +103,25 @@ export class PostdataService {
        // Get server-side error
        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
      }
+     alert(errorMessage);
      console.log(errorMessage);
      return throwError(errorMessage);
   }
 
+  createMission(mission_info: missions): Observable<missions> {
+    return this.http.post<missions>(this.baseurl + '/mission_info/mission_signup/', JSON.stringify(mission_info), this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    )
+  } 
+
+
+  missionList(): Observable<missions>{
+    return this.http.get<missions>(this.baseurl + '/mission_info/missionList')
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    )
+  }
 }

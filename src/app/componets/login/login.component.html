@@ -1,68 +1,48 @@
-<div class="bg-white rounded shadow-lg flex flex-row w-full" style="height:500px">
-    <div class="hidden md:block w-1/2 bg-cover bg-center h-full flex-shrink-0 shadow-2xl"
-        style="background-image:url(https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1534&amp;q=80)">
+<div class="bg-white rounded shadow-lg flex flex-row w-full" style="height:700px">
+  <div class="hidden md:block w-1/2 bg-cover bg-center h-full flex-shrink-0 shadow-2xl"
+    style="background-image:url(https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1534&amp;q=80)">
+  </div>
+  <!-- Form still needs an onSubmit() -->
+  <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate
+    class="p-5 w-full flex flex-col justify-center items-center shadow-2xl">
+    <div>
+      <div class="flex flex-col mb-10 w-full">
+        <label class="block text-gray-700 text-sm font-medium pb-1" for="username">
+          Username </label>
+        <input
+          class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+          id="username" type="text" placeholder="username" [(ngModel)]="user.username" required #username="ngModel"
+          name="username">
+
+        <div role="alert" *ngIf="f.submitted && username.invalid" class="text-red-700">
+          Username is required!
+        </div>
+      </div>
+
+      <div class="flex flex-col mb-10 w-full">
+        <label class="block text-gray-700 text-sm font-medium pb-1" for="password">
+          Password </label>
+        <input
+          class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
+          id="passsword" type="password" placeholder="password" [(ngModel)]="user.password" required #password="ngModel"
+          name="password">
+        <div role="alert" *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required" class="text-red-700">**Password is required</div>
+        </div>
+
+       <button class="bg-gray-700 text-white rounded py-2 px-5 w-64 mt-10">Sign In</button>
+      </div>
+
+      <div>
+        <div role="alert" *ngIf="f.submitted && isLoginFailed">
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
     </div>
-    <!-- Form still needs an onSubmit() -->
-    <form  *ngIf="!isLoggedIn"
-    name="form"
-    (ngSubmit)="f.form.valid && onSubmit()"
-    #f="ngForm"
-    novalidate
-    class="p-5 w-full flex flex-col justify-center items-center shadow-2xl"> 
-        <div>
-            <div class="flex flex-col mb-10 w-full">
-                <label class="block text-gray-700 text-sm font-medium pb-1" for="username">
-                    Username </label>
-                <input
-                    class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-                    id="username" type="text" placeholder="username"  [(ngModel)]="form.username"
-                    required
-                    #username="ngModel">
-                   
-                    <div
-                    role="alert"
-                    *ngIf="f.submitted && username.invalid"
-                  >
-                    Username is required!
-                  </div>
-            </div>
+  </form>
 
-            <div class="flex flex-col mb-10 w-full">
-                <label class="block text-gray-700 text-sm font-medium pb-1" for="password">
-                    Password </label>
-                <input
-                    class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-                    id="passsword" type="text" placeholder="password"  [(ngModel)]="form.password"
-                    required
-                    minlength="6"
-                    #password="ngModel">
-                <div
-          
-          role="alert"
-          *ngIf="f.submitted && password.invalid"
-        >
-                    <div *ngIf="password.errors.required">Password is required</div>
-                    <div *ngIf="password.errors.minlength">
-            Password must be at least 6 characters
-                 </div>
-            </div>
-
-
-           
-            <button class="bg-gray-700 text-white rounded py-2 px-5 w-64 mt-10">Sign In</button>
-        </div>
-
-        <div>
-            <div
-              
-              role="alert"
-              *ngIf="f.submitted && isLoginFailed"
-            >
-              Login failed: {{ errorMessage }}
-            </div>
-          </div>
-        </div>
-    </form>
+</div>
 
     
 </div>
+

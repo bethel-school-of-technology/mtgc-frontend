@@ -1,116 +1,104 @@
-<nav class="flex items-center justify-between flex-wrap shadow-md bg-gray-100 p-2 fixed w-full z-10 top-0">
-	<div class="flex items-center flex-shrink-0 mr-6">
-		<a routerLink="home" routerLinkActive="active">
-			<img alt="logo" class="w-48 mr-2 shadow-lg" src="../assets/images/Logo.png">
-		</a>
-	</div>
-	<!-- search field -->
-	<div class="w-full flex-grow lg:flex  lg:content-center lg:items-center lg:w-auto hidden mt-2 lg:mt-0 z-20"
-		id="nav-content">
-		<div class="flex-1 w-full mx-auto max-w-sm content-center py-4 lg:py-0">
-			<div class="relative pull-right pl-4 pr-4 md:pr-0">
-				<input type="search" placeholder="Search"
-					class="w-full bg-white text-sm text-gray-800 transition border focus:outline-none focus:border-logo-900 rounded py-1 px-2 pl-10 appearance-none leading-normal">
-				<div class="absolute search-icon" style="top: 0.375rem;left: 1.75rem;">
-					<svg class="fill-current pointer-events-none text-gray-800 w-4 h-4"
-						xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-						<path
-							d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
-						</path>
-					</svg>
+<div>
+	<mat-toolbar class="flex sticky justify-between items-center flex-wrap shadow-md bg-gray-200 p-4 w-auto z-50 top-0">
+		<mat-toolbar-row class="flex">
+			<span>
+				<div class="flex mr-6 ">
+					<a routerLink="home" routerLinkActive="active">
+						<img alt="logo" class="w-40 shadow-xl z-40" src="../assets/images/Logo.png">
+					</a>
 				</div>
-			</div>
-		</div>
-	</div>
+			</span>
 
-	<div class="block lg:hidden">
-		<button id="nav-toggle"
-			class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
-			<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-				<title>Menu</title>
-				<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-			</svg>
-		</button>
-	</div>
-
-	<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden  pt-6 lg:pt-0" id="nav-content">
-		<ul class=" list-reset lg:flex justify-end flex-1 items-center text-xl">
-			<li class="mr-3">
-				<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
-					routerLink="home" routerLinkActive="active">Map</a>
-			</li>
-			<li class="mr-3">
-				<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
-					routerLink="user-profile" routerLinkActive="active">User Profile</a>
-			</li>
-			<li class="mr-3">
-				<a class="inline-block text-gray-500 no-underline hover:text-gray-900 py-2 px-4"
-					routerLink="missions-profile" routerLinkActive="active">Missions Profile</a>
-			</li>
-			<li class="mr-3">
-				<a class="inline-block text-gray-500 no-underline hover:text-gray-900 py-2 px-4" routerLink="about"
-					routerLinkActive="active">About</a>
-			</li>
-			<li class="mr-3">
-				<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:font-normal py-2 px-4"
-					routerLink="login" routerLinkActive="active">Login</a>
-			</li>
-			<li class="mr-3">
+			<div fxShow="true" fxHide.lt-sm
+				class="justify-end  flex-grow lg:flex lg:items-center lg:w-auto hidden pt-6 lg:pt-0" id="nav-content">
+				<!-- The following menu items are for screen sizes above Small size -->
+				<a class="inline-block rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-6"
+					routerLink="home">Home</a>
+				<a class="inline-block rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-6"
+					routerLink="user-profile">User Profiles</a>
+				<a class="inline-block rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-6"
+					routerLink="connect">Get Connected </a>
+				<a class="inline-block rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-6"
+					routerLink="missions-profile">Missions Profile</a>
+				<a class="inline-block rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-6"
+					routerLink="login">Login</a>
 				<a class="inline-block border border-logo-700 rounded-full font-normal text-gray-600 no-underline hover:text-gray-900 hover:text-underline hover:shadow-lg py-2 px-4"
-					routerLink="signup" routerLinkActive="active">Signup</a>
-			</li>
-		</ul>
-
-	</div>
-</nav>
+					routerLink="signup" >Signup</a>
+			</div>
 
 
-<!--Container-->
-<div class="container shadow-lg mx-auto bg-white mt-24 md:mt-18">
-
-</div>
-
-<script>
-	//Javascript to toggle the menu
-	document.getElementById('nav-toggle').onclick = function () {
-		document.getElementById("nav-content").classList.toggle("hidden");
-	}
-</script>
-
-
-<router-outlet></router-outlet>
-
-
-<footer class='flex items-center justify-center flex-wrap w-full text-center border-t border-grey p-1 pin-b bg-gray-100'>
-	<div class="flex flex-wrap justify-center p-1">
-		<div class="flex flex-wrap mb-2 w-full">
-		  <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 ">
-			<h3 class="text-2xl py-4">About Us</h3>
-			<p>This application was produced by Bethel School of Technology students: Brittani Falor, Colin Cantwell, Scott Goodwin and Connor Chaffin. This web application is built on an Angular Front-end Framework and sourced from a SQL Database using Express/Node.js Back-end.
-			</p>
-		  </div>
-		  <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 pl-8">
-			<h3 class="text-2xl py-4">Contact Us</h3>
-			<ul>
-			  <li>Phone: <a href="#">900-800-2357</a></li>
-			  <li>Email: <a href="#">globalmissions@mtgc.com</a></li>
-			</ul>
-			<h3 class="text-xl py-4">
-				<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:font-normal py-2 px-4"
-					routerLink="admin" routerLinkActive="active">Admin</a>
-			</h3>
-			
-		  </div>
-		  <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 ">
-			<h3 class="text-2xl py-4">GitHub Links</h3>
-			<ul>
-			  <li><a href="https://github.com/Cantwell136">Colin Cantwell</a></li>
-			  <li><a href="https://github.com/scottyg68">Scott Goodwin</a></li>
-			  <li><a href="https://github.com/BrittaniFalor">Brittani Falor</a></li>
-			  <li><a href="https://github.com/connor-chaffin">Connor Chaffin</a></li>
-			</ul>
-		  </div>
-		  
+		</mat-toolbar-row>
+		<div class="flex justify-end items-stretch w-full">
+			<button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-md>
+				<svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<title>Menu</title>
+					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+				</svg>
+			</button>
 		</div>
-	  </div>
-</footer>
+
+	</mat-toolbar>
+	<!-- Menu items for Hamburger -->
+	<mat-sidenav-container fxFlexFill fxLayout="row" fxLayoutAlign="end">
+		<mat-sidenav #sidenav class="bg-logo-100 shadow-md sticky font-medium z-40 ">
+			<mat-nav-list (click)="sidenav.toggle()">
+				<button class="static justify-end px-2 py-2">
+					<svg class="fill-current h-6 w-6" role="button" xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20">
+						<title>Close</title>
+						<path
+							d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+					</svg>
+				</button>
+				<a routerLink="home" mat-list-item>Home</a>
+				<a routerLink="user-profile" mat-list-item>User Profile</a>
+				<a routerLink="connect" mat-list-item>Get Connected</a>
+				<a routerLink="missions-profile" mat-list-item>Missions Profile</a>
+				<a routerLink="login" mat-list-item>Login</a>
+				<a routerLink="signup" mat-list-item>Signup</a>
+			</mat-nav-list>
+		</mat-sidenav>
+
+		<mat-sidenav-content>
+			<router-outlet></router-outlet>
+			<footer
+				class='flex items-center justify-center flex-wrap w-full text-center border-t border-grey p-1 pin-b bg-gray-100'>
+				<div class="flex flex-wrap justify-center p-1">
+					<div class="flex flex-wrap mb-2 w-full">
+						<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 ">
+							<h3 class="text-2xl py-4">About Us</h3>
+							<p>This application was produced by Bethel School of Technology students: Brittani Falor,
+								Colin
+								Cantwell, Scott Goodwin and Connor Chaffin. This web application is built on an Angular
+								Front-end
+								Framework and sourced from a SQL Database using Express/Node.js Back-end.
+							</p>
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 pl-8">
+							<h3 class="text-2xl py-4">Contact Us</h3>
+							<ul>
+								<li>Phone: <a href="#">900-800-2357</a></li>
+								<li>Email: <a href="#">globalmissions@mtgc.com</a></li>
+							</ul>
+							<h3 class="text-xl py-4">
+								<a class="inline-block text-gray-500 no-underline hover:text-gray-900 hover:font-normal py-2 px-4"
+									routerLink="admin" routerLinkActive="active">Admin</a>
+							</h3>
+
+						</div>
+						<div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 ">
+							<h3 class="text-2xl py-4">GitHub Links</h3>
+							<ul>
+								<li><a href="https://github.com/Cantwell136">Colin Cantwell</a></li>
+								<li><a href="https://github.com/scottyg68">Scott Goodwin</a></li>
+								<li><a href="https://github.com/BrittaniFalor">Brittani Falor</a></li>
+								<li><a href="https://github.com/connor-chaffin">Connor Chaffin</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</footer>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>

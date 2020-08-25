@@ -1,0 +1,20 @@
+<div class="container bg-gray-100" style="height: 600px">
+    <ul class="mr-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+        <li *ngFor="let mission of missions">
+            <div class="bg-white shadow-lg w-full m-3 rounded-lg overflow-hidden">
+                <!-- ORG CARD -->
+                <div class="p-4">
+                    <div class="flex items-center">
+                        <h4 class="font-semibold text-lg text-gray-900 tracking-wide">{{mission.OrganizationName}}</h4>
+                        <span
+                            class="inline-block bg-logo-600 text-white text-xs px-2 rounded-full uppercase font-semibold  tracking-wider ml-auto  shadow-md">Verified</span>
+
+                    </div>
+                    <div class="text-gray-700 text-sm uppercase font-semibold  tracking-wider leading-tight mt-1">
+                        {{mission.OrganizationStreetAddress}}<br>{{mission.City}}, {{mission.State}}</div>
+                    <div class="text-logo-800 font-semibold text-xs mt-1">{{mission.Bio}}</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

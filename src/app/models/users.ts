@@ -6,6 +6,8 @@ export class users {
     username: string; 
     password: string; 
     missionary: boolean;
+    userState: string;
+    userCity: string;
     phoneNumber: string;
     bio: string;
 }
