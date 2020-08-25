@@ -4,9 +4,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 
+import { PostdataService } from './services/postdata.service';
 import { AppRoutingModule } from './app-routing.module';
-import { PostdataService } from './services/postdata.service'
-
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './componets/user-profile/user-profile.component';
 import { HomeComponent } from './componets/home/home.component';
@@ -24,6 +23,10 @@ import { MatListModule} from "@angular/material/list";
 import { MatButtonModule} from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 
+import { Observable } from 'rxjs';
+import { AuthInterceptor } from './_helpers/auth.interceptor';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,8 +35,8 @@ import { MatIconModule } from "@angular/material/icon";
     MissionsProfileComponent,
     LoginComponent,
     MapCardComponent,
-    AdminComponent,
     SignUpComponent,
+    
   
   ],
   imports: [
@@ -53,7 +56,12 @@ import { MatIconModule } from "@angular/material/icon";
       apiKey:'AIzaSyCWafOd1xDijhEnzrK836Bk3yaLgJbx9tk'
     })
   ],
-  providers: [PostdataService ],
+  providers: [ 
+   
+    PostdataService,
+    AuthInterceptor
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

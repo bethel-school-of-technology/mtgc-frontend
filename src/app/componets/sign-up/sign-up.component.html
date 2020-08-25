@@ -14,7 +14,12 @@
     </a>
 </div> -->
 
-<form (ngSubmit)="addUser()" class="flex flex-wrap items-center justify-center mx-auto my-8 w-full max-w-lg">
+<form *ngIf="!isSuccessful"
+name="form"
+(ngSubmit)="f.form.valid && onSubmit()"
+#f="ngForm"
+novalidate
+ class="flex flex-wrap items-center justify-center mx-auto my-8 w-full max-w-lg"  style="height:750px">
     <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="firstName">
@@ -22,7 +27,7 @@
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="firstName" name="firstName" type="text" placeholder="Jane" [(ngModel)]="newUser.firstName" required>
+                id="firstName" name="firstName" type="text" placeholder="Jane" [(ngModel)]="user.firstName" required>
 
         </div>
         <div class="w-full md:w-1/2 px-3">
@@ -31,7 +36,7 @@
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="lastName" name="lastName" type="text" placeholder="Doe" [(ngModel)]="newUser.lastName" required>
+                id="lastName" name="lastName" type="text" placeholder="Doe" [(ngModel)]="user.lastName" required>
         </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-6">
@@ -41,7 +46,7 @@
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="email" name="email" type="text" placeholder="jesus@dachrist.com" [(ngModel)]="newUser.email"
+                id="email" name="email" type="text" placeholder="jesus@dachrist.com" [(ngModel)]="user.email"
                 required>
             <p class="text-gray-600 text-xs italic">Remember to keep it professional Sparkles</p>
         </div>
@@ -52,7 +57,7 @@
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="phoneNumber" name="phoneNumber" type="text" placeholder="xxx-xxx-xxxx"
-                [(ngModel)]="newUser.phoneNumber">
+                [(ngModel)]="user.phoneNumber">
             <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
         </div>
     </div>
@@ -63,7 +68,7 @@
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="username" name="username" type="text" placeholder="savior_complex" [(ngModel)]="newUser.username"
+                id="username" name="username" type="text" placeholder="savior_complex" [(ngModel)]="user.username"
                 required>
             <p class="text-gray-600 text-xs italic">Anything will do</p>
         </div>
@@ -73,7 +78,7 @@
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="password" type="password" placeholder="*************" [(ngModel)]="newUser.password"
+                id="password" type="password" placeholder="*************" [(ngModel)]="user.password"
                 [ngModelOptions]="{standalone: true}" required>
             <p class="text-gray-600 text-xs italic">We're gonna salt it!</p>
         </div>
@@ -85,10 +90,16 @@
             </label>
             <textarea
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="bio" name="bio" type="text" placeholder="" [(ngModel)]="newUser.bio"></textarea>
+                id="bio" name="bio" type="text" placeholder="" [(ngModel)]="user.bio"></textarea>
             <p class="text-gray-600 text-xs italic">Tell us about yourself</p>
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
         </div>
     </div>
-
+    <div *ngIf="f.submitted && isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
 </form>
+
+<div *ngIf="isSuccessful">
+    Your registration is successful!
+  </div>

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { users } from '../models/users';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-
+import { missions } from '../models/missions'
 @Injectable({
   providedIn: 'root'
 })
@@ -22,6 +22,21 @@ export class PostdataService {
     })
   }
 
+  getPublicContent(): Observable<any> {
+    return this.http.get(this.baseurl + '/users/all', { responseType: 'text' });
+  }
+
+  getUserBoard(): Observable<any> {
+    return this.http.get(this.baseurl + '/users/user', { responseType: 'text' });
+  }
+
+  getModeratorBoard(): Observable<any> {
+    return this.http.get(this.baseurl + '/users/mod', { responseType: 'text' });
+  }
+
+  getAdminBoard(): Observable<any> {
+    return this.http.get(this.baseurl + '/users/admin', { responseType: 'text' });
+  }
   // POST
   CreateUser(user: users): Observable<users> {
     return this.http.post<users>(this.baseurl + '/users/signup/', JSON.stringify(user), this.httpOptions)
@@ -90,4 +105,20 @@ export class PostdataService {
      return throwError(errorMessage);
   }
 
+  createMission(mission_info: missions): Observable<missions> {
+    return this.http.post<missions>(this.baseurl + '/mission_info/mission_signup/', JSON.stringify(mission_info), this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    )
+  } 
+
+
+  missionList(): Observable<missions>{
+    return this.http.get<missions>(this.baseurl + '/mission_info/missionList')
+    .pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    )
+  }
 }
