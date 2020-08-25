@@ -34,6 +34,8 @@ export class AuthService {
       password: user.password,
       missionary: user.missionary,
       phoneNumber: user.phoneNumber,
+      userCity: user.userCity,
+      userState: user.userState,
       bio: user.bio
 
     }, httpOptions);
