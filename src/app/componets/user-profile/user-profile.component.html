@@ -80,10 +80,14 @@
                 <strong>Email:</strong>
                 {{ currentUser.email }}
             </p>
-            <strong>Roles:</strong>
-            <ul>
-            </ul>
-        </div>
+
+            
+          </div>
+          
+          <ng-template #loggedOut>
+            Please login.
+          </ng-template>
+
 
         <ng-template #loggedOut>
             Please login.
