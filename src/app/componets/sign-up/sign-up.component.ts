@@ -31,6 +31,7 @@ export class SignUpComponent implements OnInit {
         this.isSignUpFailed = true;
       }
     );
+    alert("User successfully created!")
   }
 
 
