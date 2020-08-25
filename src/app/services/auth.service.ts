@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { TokenStorageService } from './token-storage.service';
 
 const AUTH_API = 'http://localhost:3000';
 
@@ -13,7 +14,7 @@ const httpOptions = {
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private tokenStorage: TokenStorageService) { }
 
   login(credentials): Observable<any> {
     return this.http.post<any>(AUTH_API + '/users/signin', {
@@ -39,20 +40,20 @@ export class AuthService {
 
   regMission(mission): Observable<any> {
     return this.http.post<any>(AUTH_API + '/mission_info/mission_signup/', {
-      
+
       organizationName: mission.organizationName,
       organizationStreetAddress: mission.organizationStreetAddress,
-      city:mission.city,
+      city: mission.city,
       state: mission.state,
       zip: mission.zip,
       organizationCountry: mission.organizationCountry,
-      missionLocationCity: mission. missionLocationCity,
+      missionLocationCity: mission.missionLocationCity,
       missionLocationCountry: mission.missionLocationCountry,
       image: mission.image,
       bio: mission.bio,
       lat: mission.lat,
       lng: mission.lng,
 
-    }, httpOptions);
+    }, { headers: { authorization: this.tokenStorage.getToken() } });
   }
 }
