@@ -77,6 +77,7 @@ export class MissionsProfileComponent implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         console.log(newMission);
+        alert("Your Organization has successfully been created!")
       },
       err => {
         this.errorMessage = err.error.message;

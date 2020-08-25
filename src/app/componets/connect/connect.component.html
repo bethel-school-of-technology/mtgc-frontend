@@ -10,9 +10,16 @@
                             class="inline-block bg-logo-600 text-white text-xs px-2 rounded-full uppercase font-semibold  tracking-wider ml-auto  shadow-md">Verified</span>
 
                     </div>
-                    <div class="text-gray-700 text-sm uppercase font-semibold  tracking-wider leading-tight mt-1">
-                        {{mission.OrganizationStreetAddress}}<br>{{mission.City}}, {{mission.State}}</div>
-                    <div class="text-logo-800 font-semibold text-xs mt-1">{{mission.Bio}}</div>
+                    <!-- ORG AND MISSION ADDRESS -->
+                    <div class="flex items-center mt-2 mb-2">
+                        <div class="text-gray-700 text-sm uppercase font-semibold  tracking-wider leading-tight mt-1">
+                            {{mission.OrganizationStreetAddress}}<br>{{mission.City}}, {{mission.State}}</div>
+                        <!-- <div class="text-gray-700 text-sm uppercase font-semibold  tracking-wider leading-tight mt-1">
+                            {{mission.MissionLocationCity}}<br>{{mission.MissionLocationCountry}}</div> -->
+                            <span
+                            class="inline-block bg-gray-200 justify-end text-xs px-4 rounded-full uppercase font-semibold  tracking-wider ml-auto  shadow-md">Doing works in: <br> {{mission.MissionLocationCity}} {{mission.MissionLocationCountry}}</span>
+                    </div>
+                    <div class="text-logo-800 font-semibold text-xs mt-2">{{mission.Bio}}</div>
                 </div>
             </div>
         </li>
