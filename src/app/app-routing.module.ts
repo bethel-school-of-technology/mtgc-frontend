@@ -4,7 +4,6 @@ import { HomeComponent } from './componets/home/home.component';
 import { UserProfileComponent } from './componets/user-profile/user-profile.component';
 import { MissionsProfileComponent } from './componets/missions-profile/missions-profile.component';
 import { LoginComponent } from './componets/login/login.component';
-import { AboutComponent } from './componets/about/about.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
 import { AdminComponent } from './componets/admin/admin.component';
 import { ConnectComponent } from './componets/connect/connect.component';

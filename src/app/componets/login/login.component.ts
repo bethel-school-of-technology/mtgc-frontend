@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { users } from '../../models/users';
 import { AuthService } from '../../services/auth.service';
 import { TokenStorageService } from '../../services/token-storage.service';
 import { Router } from '@angular/router';
@@ -20,9 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit() {
-    // if(this.tokenStorage.getToken()){
-    //   this.isLoggedIn = true;
-    // }
+  
   }
   
   onSubmit() {

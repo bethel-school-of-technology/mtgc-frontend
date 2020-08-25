@@ -11,7 +11,6 @@ import { UserProfileComponent } from './componets/user-profile/user-profile.comp
 import { HomeComponent } from './componets/home/home.component';
 import { MissionsProfileComponent } from './componets/missions-profile/missions-profile.component';
 import { LoginComponent } from './componets/login/login.component';
-import { MapCardComponent } from './componets/map-card/map-card.component';
 import { AdminComponent } from './componets/admin/admin.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
 import { ConnectComponent } from './componets/connect/connect.component';
@@ -35,7 +34,6 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
     HomeComponent,
     MissionsProfileComponent,
     LoginComponent,
-    MapCardComponent,
     SignUpComponent,
     AdminComponent,
     ConnectComponent
