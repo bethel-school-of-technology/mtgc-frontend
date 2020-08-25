@@ -14,6 +14,7 @@ import { LoginComponent } from './componets/login/login.component';
 import { MapCardComponent } from './componets/map-card/map-card.component';
 import { AdminComponent } from './componets/admin/admin.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
+import { ConnectComponent } from './componets/connect/connect.component';
 //Material import
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,8 +37,8 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
     LoginComponent,
     MapCardComponent,
     SignUpComponent,
-    
-  
+    AdminComponent,
+    ConnectComponent
   ],
   imports: [
     BrowserModule,

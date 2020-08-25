@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TokenStorageService } from './token-storage.service';
+import { missions } from '../models/missions';
 
 const AUTH_API = 'http://localhost:3000';
 
@@ -56,4 +57,9 @@ export class AuthService {
 
     }, { headers: { authorization: this.tokenStorage.getToken() } });
   }
+
+  // missionList(mission): Observable<missions> {
+  //   return this.http.get<missions>(AUTH_API + '/mission_info/missionList', {
+  //   })
+  // }
 }

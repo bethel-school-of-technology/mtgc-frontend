@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostdataService } from '../../services/postdata.service';
+import { users } from '../../models/users';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -9,6 +11,7 @@ import { PostdataService } from '../../services/postdata.service';
 })
 export class AdminComponent implements OnInit {
   Userlist: any = [];
+  public users: users[];
 
 
   ngOnInit() {
@@ -16,23 +19,23 @@ export class AdminComponent implements OnInit {
   }
 
   constructor(
-    public postdataService: PostdataService
-  ){ }
+    public postdataService: PostdataService, private http: HttpClient
+  ) { }
 
-   // Users list
-   loadUser() {
+  // Users list
+  loadUser() {
     return this.postdataService.GetAdmin().subscribe((data: {}) => {
       this.Userlist = data;
-    
+
     })
   }
   // Delete issue
-  deleteIusse(data){
-    var index = index = this.Userlist.map(x => {return x.issue_name}).indexOf(data.issue_name);
-     return this.postdataService.DeleteUsers(data.id).subscribe(res => {
+  deleteIusse(data) {
+    var index = index = this.Userlist.map(x => { return x.issue_name }).indexOf(data.issue_name);
+    return this.postdataService.DeleteUsers(data.id).subscribe(res => {
       this.Userlist.splice(index, 1)
-       console.log('Issue deleted!')
-     })
+      console.log('Issue deleted!')
+    })
   }
 
 

@@ -7,6 +7,8 @@ import { LoginComponent } from './componets/login/login.component';
 import { AboutComponent } from './componets/about/about.component';
 import { SignUpComponent } from './componets/sign-up/sign-up.component'; 
 import { AdminComponent } from './componets/admin/admin.component';
+import { ConnectComponent } from './componets/connect/connect.component';
+
 
 const routes: Routes = [
 
@@ -23,12 +25,12 @@ const routes: Routes = [
     component: MissionsProfileComponent
   },
   {
-    path: 'about',
-    component: AboutComponent
-  },
-  {
     path:'login',
     component: LoginComponent
+  },
+  {
+    path:'connect', 
+    component: ConnectComponent
   },
   {
     path: 'signup',

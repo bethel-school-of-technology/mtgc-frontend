@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { TokenStorageService } from '../../services/token-storage.service';
 import { missions } from '../../models/missions';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: 'app-connect',
+  templateUrl: './connect.component.html',
+  styleUrls: ['./connect.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class ConnectComponent implements OnInit {
   public missions: missions[];
   private missionsRoute = 'http://localhost:3000/mission_info/missionList'
 
@@ -25,4 +23,5 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.missionList();
   }
+
 }
