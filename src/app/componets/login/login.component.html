@@ -24,7 +24,7 @@
           Password </label>
         <input
           class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500"
-          id="passsword" type="text" placeholder="password" [(ngModel)]="user.password" required #password="ngModel"
+          id="passsword" type="password" placeholder="password" [(ngModel)]="user.password" required #password="ngModel"
           name="password">
         <div role="alert" *ngIf="f.submitted && password.invalid">
           <div *ngIf="password.errors.required" class="text-red-700">**Password is required</div>
