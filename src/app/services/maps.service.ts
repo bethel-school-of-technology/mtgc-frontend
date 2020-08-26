@@ -23,10 +23,6 @@ export class MapsService {
   }
 
   missionsLocation(){
-    return this.http.get<Markers>('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA;8313+Muirwood+Trail,+Fort+Worth,TX;16031+Deblin+Square,+Hammond,+LA&key=AIzaSyCyq9CtZmKymMGxQOsgmoGPxgREjLuCR7c')
+    return this.http.get<Markers>('https://maps.googleapis.com/maps/api/geocode/json?address=Puerto+Plata+57000,+Dominican+Republic;Ole+Sangale+Road,+Nairobi+City,+Kenya;5+Bentley+Court,+Somerdale,+NJ;101+E+Oregon+street,+Kalispell,MT;1600+Amphitheatre+Parkway,+Mountain+View,+CA;8313+Muirwood+Trail,+Fort+Worth,TX;16031+Deblin+Square,+Hammond,+LA&key=AIzaSyCyq9CtZmKymMGxQOsgmoGPxgREjLuCR7c')
   }
 }
-
-/* `https://maps.googleapis.com/maps/api/geocode/json?address=${}` */
-/* 
-8313+Muirwood+Trail+,+Fort+Worth,TX */
